@@ -48,13 +48,13 @@ The main setup script that orchestrates the entire setup process:
 
 ### Brewfile
 Defines all packages and applications to install via Homebrew:
-- Command-line tools (git, vim, tmux, etc.)
-- GUI applications (VS Code, iTerm2, Docker, etc.)
+- Command-line tools (git, zsh, wget, curl, htop, tree, jq, gh, node, python)
+- GUI applications (VS Code)
 - Fonts (Fira Code, JetBrains Mono)
 
 ### Configuration Files (`config/`)
 Dotfiles that will be symlinked to your home directory:
-- **zshrc**: Zsh shell configuration with aliases and environment setup
+- **zshrc**: Zsh shell configuration with environment setup and Homebrew integration
 - **gitconfig**: Git global configuration and aliases
 - **gitignore_global**: Global gitignore patterns for common files
 
@@ -71,6 +71,7 @@ System preferences and settings including:
 ### Setup Scripts (`scripts/`)
 Additional setup scripts for specific tasks:
 - **setup-dev-tools.sh**: Configures development tools and creates project directories
+- **setup-touchid-sudo.sh**: Enables Touch ID authentication for sudo commands in Terminal
 
 ### VS Code Settings
 - **[.vscode/settings.json](.vscode/settings.json)** - VS Code workspace settings

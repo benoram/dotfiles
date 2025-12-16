@@ -14,22 +14,8 @@ export EDITOR='vim'
 export VISUAL='vim'
 
 # Aliases
-alias ll='ls -lah'
-alias la='ls -A'
-alias l='ls -CF'
 alias ..='cd ..'
 alias ...='cd ../..'
-
-# Git aliases
-alias gs='git status'
-alias ga='git add'
-alias gc='git commit'
-alias gp='git push'
-alias gl='git log --oneline --graph --decorate'
-
-# Directory navigation
-alias projects='cd ~/Projects'
-alias desktop='cd ~/Desktop'
 
 # Homebrew
 alias brewup='brew update && brew upgrade && brew cleanup'
