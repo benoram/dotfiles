@@ -24,7 +24,8 @@
     "vscode": {
       "extensions": [
         "GitHub.copilot",
-        "GitHub.copilot-chat"
+        "GitHub.copilot-chat",
+        "saoudrizwan.claude-dev"
       ],
       "settings": {
         "terminal.integrated.defaultProfile.linux": "bash"
