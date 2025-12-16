@@ -40,5 +40,5 @@
 
   "remoteUser": "vscode",
   
-  "postCreateCommand": "bash -c 'curl -sS https://starship.rs/install.sh | sh -s -- -y && cd ${containerWorkspaceFolder} && ./bootstrap.sh'"
+  "postCreateCommand": "bash -c 'curl -fsSL https://starship.rs/install.sh | sh -s -- -y && cd ${containerWorkspaceFolder} && ./bootstrap.sh'"
 }

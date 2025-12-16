@@ -52,7 +52,7 @@ if [[ "$OS_TYPE" == "macos" ]]; then
     info "Running on macOS $MACOS_VERSION"
 elif [[ "$OS_TYPE" == "linux" ]]; then
     if [[ -f /etc/os-release ]]; then
-        LINUX_DISTRO=$(grep ^NAME /etc/os-release | cut -d'=' -f2 | tr -d '"')
+        LINUX_DISTRO=$(grep '^NAME=' /etc/os-release | cut -d'=' -f2 | tr -d '"')
         info "Running on Linux: $LINUX_DISTRO"
     else
         info "Running on Linux"
