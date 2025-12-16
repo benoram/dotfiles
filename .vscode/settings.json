@@ -1,0 +1,4 @@
+{
+  // Set Claude Sonnet 4.5 as the default model for GitHub Copilot chat
+  "github.copilot.chat.model": "claude-sonnet-4.5"
+}
