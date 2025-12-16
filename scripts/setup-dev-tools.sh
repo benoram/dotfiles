@@ -19,16 +19,6 @@ else
     echo "✓ Oh My Zsh already installed"
 fi
 
-# Setup FZF key bindings (if installed)
-if command -v fzf &> /dev/null; then
-    if [[ ! -f "$HOME/.fzf.zsh" ]]; then
-        "$(brew --prefix)/opt/fzf/install" --key-bindings --completion --no-update-rc
-        echo "✓ FZF key bindings configured"
-    else
-        echo "✓ FZF already configured"
-    fi
-fi
-
 # Create common development directories
 mkdir -p ~/Projects
 mkdir -p ~/Projects/personal

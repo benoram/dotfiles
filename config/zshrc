@@ -20,11 +20,6 @@ alias ...='cd ../..'
 # Homebrew
 alias brewup='brew update && brew upgrade && brew cleanup'
 
-# FZF configuration (if installed)
-if command -v fzf &> /dev/null; then
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-fi
-
 # History configuration
 HISTSIZE=10000
 SAVEHIST=10000
