@@ -1,8 +1,8 @@
 # ~/.bashrc
 # Bash configuration file
 
-# Set Homebrew path (Apple Silicon)
-if [[ $(uname -m) == "arm64" ]]; then
+# Set Homebrew path (macOS Apple Silicon)
+if [[ "$OSTYPE" == "darwin"* ]] && [[ $(uname -m) == "arm64" ]]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -14,8 +14,10 @@ export VISUAL='nano'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-# Homebrew
-alias brewup='brew update && brew upgrade && brew cleanup'
+# Homebrew (if available)
+if command -v brew &> /dev/null; then
+    alias brewup='brew update && brew upgrade && brew cleanup'
+fi
 
 # History configuration
 HISTSIZE=10000
@@ -27,5 +29,7 @@ shopt -s histappend
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-# Initialize starship prompt
-eval "$(starship init bash)"
+# Initialize starship prompt (if available)
+if command -v starship &> /dev/null; then
+    eval "$(starship init bash)"
+fi

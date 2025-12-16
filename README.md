@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal configuration files and development environment setup for macOS 26 (Sequoia).
+Personal configuration files and development environment setup for macOS and Linux.
 
 ## One-Line Install
 
@@ -21,11 +21,17 @@ cd ~/.dotfiles
 ```
 
 **What it does:**
-- Installs Homebrew (if needed)
-- Installs packages and applications from Brewfile
-- Symlinks dotfiles from `config/` to your home directory
-- Applies macOS system preferences
-- Runs additional setup scripts
+- **On macOS:**
+  - Installs Homebrew (if needed)
+  - Installs packages and applications from Brewfile
+  - Applies macOS system preferences
+  - Runs Touch ID setup for sudo
+- **On Linux:**
+  - Skips macOS-specific installations
+  - Provides guidance for manual package installation
+- **On both platforms:**
+  - Symlinks dotfiles from `config/` to your home directory
+  - Runs common setup scripts
 
 ## Repository Structure
 
@@ -47,28 +53,28 @@ cd ~/.dotfiles
 ## Contents
 
 ### Bootstrap Script
-Main setup script that orchestrates the entire installation process.
+Main setup script that orchestrates the entire installation process. Automatically detects the operating system and runs appropriate setup steps for macOS or Linux.
 
-### Brewfile
-Defines packages and applications to install via Homebrew including:
+### Brewfile (macOS only)
+Defines packages and applications to install via Homebrew on macOS including:
 - **Command-line tools** - git, zsh, node, python, gh (GitHub CLI), starship (cross-shell prompt), and more
 - **GUI applications** - VS Code, OrbStack, GitHub Desktop, Tailscale, Yubico Authenticator
 - **Mac App Store apps** - 1Password for Safari, Drafts, Magnet, Soulver 3, Todoist, Things, Windows App, Pages, Xcode
 - **Fonts** - Fira Code, JetBrains Mono, Meslo LG Nerd Font
 
 ### Configuration Files (`config/`)
-Dotfiles symlinked to your home directory:
+Dotfiles symlinked to your home directory (compatible with both macOS and Linux):
 - **zshrc** - Zsh shell configuration with Starship prompt
 - **bashrc** - Bash shell configuration with Starship prompt
 - **gitconfig** - Git global configuration and aliases
 - **gitignore_global** - Global gitignore patterns
 
-### macOS Defaults (`macos/defaults.sh`)
-System preferences: UI/UX improvements, trackpad/keyboard settings, Finder, Dock, Safari, screenshots, and more.
+### macOS Defaults (`macos/defaults.sh`) - macOS only
+System preferences: UI/UX improvements, trackpad/keyboard settings, Finder, Dock, Safari, screenshots, and more. Automatically skipped on Linux.
 
 ### Setup Scripts (`scripts/`)
-- **setup-dev-tools.sh** - Configures development tools and creates project directories
-- **setup-touchid-sudo.sh** - Enables Touch ID for sudo commands
+- **setup-dev-tools.sh** - Configures development tools and creates project directories (works on both macOS and Linux)
+- **setup-touchid-sudo.sh** - Enables Touch ID for sudo commands (macOS only, automatically skipped on Linux)
 
 ### VS Code Settings
 - **[.vscode/settings.json](.vscode/settings.json)** - Sets Claude Sonnet 4.5 as default GitHub Copilot chat model
@@ -126,16 +132,32 @@ To customize your Starship prompt:
 
 ## Requirements
 
+### For macOS:
 - macOS 26 (Sequoia) or compatible version
 - Internet connection
-- Administrator access (for some system preferences)
-- Signed in to the Mac App Store (required for Mac App Store app installations via `mas`)
+- Administrator access (for system preferences and Homebrew installation)
+- Signed in to the Mac App Store (for Mac App Store app installations via `mas`)
+
+### For Linux:
+- Linux distribution (tested on Ubuntu)
+- Internet connection
+- Basic command-line tools (bash, curl, git)
+- Administrator access (for some configurations)
+
+### Recommended for Linux:
+Before running the bootstrap script, consider manually installing:
+- **Starship prompt**: `curl -sS https://starship.rs/install.sh | sh`
+- **Essential tools**: git, zsh, curl, wget, htop, tree, jq
+- **Development tools**: Node.js, Python, GitHub CLI (gh)
 
 ## Notes
 
 - The bootstrap script creates backups of existing dotfiles with a `.backup` extension
-- Some macOS defaults require logging out or restarting to take effect
+- The script automatically detects your operating system and runs appropriate setup steps
+- On macOS: Some defaults require logging out or restarting to take effect
+- On Linux: macOS-specific features (Homebrew, system preferences, Touch ID) are automatically skipped
 - The script is idempotent - it's safe to run multiple times
+- For GitHub Codespaces: The devcontainer automatically runs the bootstrap script on creation
 
 ## License
 
