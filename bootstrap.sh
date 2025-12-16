@@ -93,7 +93,12 @@ else
         # Install Starship prompt automatically
         if ! command -v starship &> /dev/null; then
             info "Installing Starship prompt..."
-            curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+            if curl -fsSL https://starship.rs/install.sh | sh -s -- -y; then
+                info "Starship installed successfully"
+            else
+                warn "Failed to install Starship. You can install it manually later:"
+                warn "  curl -fsSL https://starship.rs/install.sh | sh"
+            fi
         else
             info "Starship is already installed"
         fi
