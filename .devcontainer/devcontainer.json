@@ -40,5 +40,5 @@
 
   "remoteUser": "vscode",
   
-  "postCreateCommand": "cd ${containerWorkspaceFolder} && ./bootstrap.sh"
+  "postCreateCommand": "cd ${containerWorkspaceFolder} && bash bootstrap.sh"
 }
