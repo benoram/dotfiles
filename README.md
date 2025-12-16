@@ -49,7 +49,11 @@ cd ~/.dotfiles
 Main setup script that orchestrates the entire installation process.
 
 ### Brewfile
-Defines packages and applications to install via Homebrew including command-line tools (git, zsh, node, python, etc.), GUI applications (VS Code), and fonts.
+Defines packages and applications to install via Homebrew including:
+- **Command-line tools** - git, zsh, node, python, gh (GitHub CLI), and more
+- **GUI applications** - VS Code, OrbStack, GitHub Desktop, Tailscale
+- **Mac App Store apps** - 1Password for Safari, Drafts, Magnet, Soulver 3, Todoist, Things, Windows App
+- **Fonts** - Fira Code, JetBrains Mono
 
 ### Configuration Files (`config/`)
 Dotfiles symlinked to your home directory:
@@ -111,6 +115,7 @@ brew bundle install
 - macOS 26 (Sequoia) or compatible version
 - Internet connection
 - Administrator access (for some system preferences)
+- Signed in to the Mac App Store (required for Mac App Store app installations via `mas`)
 
 ## Notes
 
