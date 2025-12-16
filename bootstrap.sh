@@ -156,8 +156,8 @@ if [[ -d "$DOTFILES_DIR/scripts" ]]; then
         if [[ -f "$script" ]]; then
             script_name=$(basename "$script")
             
-            # Skip macOS-specific scripts on Linux
-            if [[ "$OS_TYPE" != "macos" && "$script_name" == "setup-touchid-sudo.sh" ]]; then
+            # Skip macOS-specific scripts (prefix: macos-) on non-macOS systems
+            if [[ "$OS_TYPE" != "macos" && "$script_name" == macos-* ]]; then
                 info "Skipping $script_name (macOS only)"
                 continue
             fi

@@ -75,7 +75,7 @@ System preferences: UI/UX improvements, trackpad/keyboard settings, Finder, Dock
 
 ### Setup Scripts (`scripts/`)
 - **setup-dev-tools.sh** - Configures development tools and creates project directories (works on both macOS and Linux)
-- **setup-touchid-sudo.sh** - Enables Touch ID for sudo commands (macOS only, automatically skipped on Linux)
+- **macos-setup-touchid-sudo.sh** - Enables Touch ID for sudo commands (macOS only, automatically skipped on Linux via `macos-` prefix)
 
 ### VS Code Settings
 - **[.vscode/settings.json](.vscode/settings.json)** - Sets Claude Sonnet 4.5 as default GitHub Copilot chat model
