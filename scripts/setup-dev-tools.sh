@@ -20,9 +20,7 @@ else
 fi
 
 # Create common development directories
-mkdir -p ~/Projects
-mkdir -p ~/Projects/personal
-mkdir -p ~/Projects/work
+mkdir -p ~/code
 echo "✓ Created development directories"
 
 echo "Development tools setup complete!"
