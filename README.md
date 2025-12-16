@@ -134,7 +134,7 @@ To customize your Starship prompt:
 ## Requirements
 
 ### For macOS:
-- macOS 26 (Sequoia) or compatible version
+- macOS 15 (Sequoia) or compatible version
 - Internet connection
 - Administrator access (for system preferences and Homebrew installation)
 - Signed in to the Mac App Store (for Mac App Store app installations via `mas`)
