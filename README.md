@@ -34,7 +34,8 @@ cd ~/.dotfiles
 ├── bootstrap.sh           # Main setup script
 ├── Brewfile              # Homebrew packages and applications
 ├── config/               # Dotfiles (symlinked to ~/)
-│   ├── zshrc            # Zsh configuration
+│   ├── zshrc            # Zsh configuration with Starship
+│   ├── bashrc           # Bash configuration with Starship
 │   ├── gitconfig        # Git configuration
 │   └── gitignore_global # Global gitignore
 ├── macos/
@@ -50,14 +51,15 @@ Main setup script that orchestrates the entire installation process.
 
 ### Brewfile
 Defines packages and applications to install via Homebrew including:
-- **Command-line tools** - git, zsh, node, python, gh (GitHub CLI), and more
+- **Command-line tools** - git, zsh, node, python, gh (GitHub CLI), starship (cross-shell prompt), and more
 - **GUI applications** - VS Code, OrbStack, GitHub Desktop, Tailscale, BusyCal, Yubico Authenticator
 - **Mac App Store apps** - 1Password for Safari, Drafts, Magnet, Soulver 3, Todoist, Things, Windows App, Pages, Xcode
-- **Fonts** - Fira Code, JetBrains Mono
+- **Fonts** - Fira Code, JetBrains Mono, Meslo LG Nerd Font
 
 ### Configuration Files (`config/`)
 Dotfiles symlinked to your home directory:
-- **zshrc** - Zsh shell configuration
+- **zshrc** - Zsh shell configuration with Starship prompt
+- **bashrc** - Bash shell configuration with Starship prompt
 - **gitconfig** - Git global configuration and aliases
 - **gitignore_global** - Global gitignore patterns
 
@@ -109,6 +111,18 @@ brew bundle install
 1. Create a new `.sh` file in the `scripts/` directory
 2. Make it executable: `chmod +x scripts/your-script.sh`
 3. Run the bootstrap script again, or execute it manually
+
+### Customizing Starship Prompt
+Starship can be customized by creating a configuration file at `~/.config/starship.toml`. This allows you to modify the prompt appearance, modules, and behavior to suit your preferences.
+
+To customize your Starship prompt:
+1. Create the configuration directory and file:
+   ```bash
+   mkdir -p ~/.config
+   touch ~/.config/starship.toml
+   ```
+2. Add your customizations to `~/.config/starship.toml`
+3. Refer to the [Starship Configuration Documentation](https://starship.rs/config/) for available options and examples
 
 ## Requirements
 
