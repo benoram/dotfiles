@@ -20,11 +20,20 @@ if [[ ! -f "$PAM_FILE.backup" ]]; then
     echo "✓ Created backup of $PAM_FILE"
 fi
 
-# Add Touch ID support at the top of the file (after comments)
+# Add Touch ID support after the first non-comment line
 # This will allow Touch ID authentication for sudo commands
-sudo sed -i '' '2i\
-'"$TOUCHID_LINE"'
-' "$PAM_FILE"
+# Use a more robust approach that finds the first 'auth' line and inserts before it
+if sudo grep -q "^auth" "$PAM_FILE"; then
+    # Insert before the first auth line
+    sudo sed -i '' "/^auth/i\\
+$TOUCHID_LINE
+" "$PAM_FILE"
+else
+    # Fallback: insert after comment block (after first non-comment, non-empty line)
+    sudo sed -i '' "1a\\
+$TOUCHID_LINE
+" "$PAM_FILE"
+fi
 
 if sudo grep -q "pam_tid.so" "$PAM_FILE"; then
     echo "✓ Touch ID for sudo configured successfully"
