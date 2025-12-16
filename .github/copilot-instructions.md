@@ -8,6 +8,7 @@ This is a dotfiles repository for managing personal configuration files and deve
 ### **CRITICAL: All changes MUST follow a pull request workflow**
 - Never commit directly to the `main` branch
 - Always create a new branch for any changes
+- All pull requests require a GitHub issue - create an issue first if one doesn't exist
 - Open a pull request for review before merging
 - Ensure all changes are reviewed and approved
 

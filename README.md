@@ -2,9 +2,17 @@
 
 Personal configuration files and development environment setup for macOS 26 (Sequoia).
 
+## One-Line Install
+
+Deploy these dotfiles to a new machine with a single command:
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/benoram/dotfiles/main/bootstrap.sh)"
+```
+
 ## Quick Start
 
-Run the bootstrap script to set up your Mac:
+For more control, clone and run the bootstrap script manually:
 
 ```bash
 git clone https://github.com/benoram/dotfiles.git ~/.dotfiles
@@ -12,12 +20,12 @@ cd ~/.dotfiles
 ./bootstrap.sh
 ```
 
-The bootstrap script will:
-- Install Homebrew (if not already installed)
-- Install packages and applications from the Brewfile
-- Symlink dotfiles from the `config/` directory to your home directory
-- Apply macOS system preferences from `macos/defaults.sh`
-- Run additional setup scripts from the `scripts/` directory
+**What it does:**
+- Installs Homebrew (if needed)
+- Installs packages and applications from Brewfile
+- Symlinks dotfiles from `config/` to your home directory
+- Applies macOS system preferences
+- Runs additional setup scripts
 
 ## Repository Structure
 
@@ -37,45 +45,27 @@ The bootstrap script will:
 
 ## Contents
 
-### Bootstrap Script (`bootstrap.sh`)
-The main setup script that orchestrates the entire setup process:
-- Checks for macOS compatibility
-- Installs and updates Homebrew
-- Processes the Brewfile
-- Creates symlinks for dotfiles
-- Applies macOS defaults
-- Runs additional setup scripts
+### Bootstrap Script
+Main setup script that orchestrates the entire installation process.
 
 ### Brewfile
-Defines all packages and applications to install via Homebrew:
-- Command-line tools (git, zsh, wget, curl, htop, tree, jq, gh, node, python)
-- GUI applications (VS Code)
-- Fonts (Fira Code, JetBrains Mono)
+Defines packages and applications to install via Homebrew including command-line tools (git, zsh, node, python, etc.), GUI applications (VS Code), and fonts.
 
 ### Configuration Files (`config/`)
-Dotfiles that will be symlinked to your home directory:
-- **zshrc**: Zsh shell configuration with environment setup and Homebrew integration
-- **gitconfig**: Git global configuration and aliases
-- **gitignore_global**: Global gitignore patterns for common files
+Dotfiles symlinked to your home directory:
+- **zshrc** - Zsh shell configuration
+- **gitconfig** - Git global configuration and aliases
+- **gitignore_global** - Global gitignore patterns
 
 ### macOS Defaults (`macos/defaults.sh`)
-System preferences and settings including:
-- UI/UX improvements
-- Trackpad and keyboard settings
-- Finder configuration
-- Dock preferences
-- Safari settings
-- Screenshot preferences
-- And more...
+System preferences: UI/UX improvements, trackpad/keyboard settings, Finder, Dock, Safari, screenshots, and more.
 
 ### Setup Scripts (`scripts/`)
-Additional setup scripts for specific tasks:
-- **setup-dev-tools.sh**: Configures development tools and creates project directories
-- **setup-touchid-sudo.sh**: Enables Touch ID authentication for sudo commands in Terminal
+- **setup-dev-tools.sh** - Configures development tools and creates project directories
+- **setup-touchid-sudo.sh** - Enables Touch ID for sudo commands
 
 ### VS Code Settings
-- **[.vscode/settings.json](.vscode/settings.json)** - VS Code workspace settings
-  - Sets Claude Sonnet 4.5 as the default GitHub Copilot chat model
+- **[.vscode/settings.json](.vscode/settings.json)** - Sets Claude Sonnet 4.5 as default GitHub Copilot chat model
 
 ## Manual Steps
 
