@@ -115,6 +115,7 @@ brew bundle install
 - macOS 26 (Sequoia) or compatible version
 - Internet connection
 - Administrator access (for some system preferences)
+- Signed in to the Mac App Store (required for Mac App Store app installations via `mas`)
 
 ## Notes
 
