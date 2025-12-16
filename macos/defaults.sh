@@ -4,8 +4,9 @@
 # Configure macOS system preferences and defaults
 # Run with: bash macos/defaults.sh
 
-# Close System Preferences to prevent overriding settings
-osascript -e 'tell application "System Preferences" to quit'
+# Close System Settings to prevent overriding settings
+osascript -e 'tell application "System Settings" to quit' 2>/dev/null || \
+osascript -e 'tell application "System Preferences" to quit' 2>/dev/null
 
 echo "Configuring macOS defaults..."
 

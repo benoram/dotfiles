@@ -101,7 +101,7 @@ fi
 # Run additional setup scripts
 if [[ -d "$DOTFILES_DIR/scripts" ]]; then
     for script in "$DOTFILES_DIR/scripts/"*.sh; do
-        if [[ -f "$script" && -x "$script" ]]; then
+        if [[ -f "$script" ]]; then
             info "Running $(basename "$script")..."
             bash "$script"
         fi
