@@ -12,6 +12,7 @@ brew "jq"
 brew "gh"  # GitHub CLI
 brew "node"
 brew "python"
+brew "starship"  # Cross-shell prompt
 
 # Casks (GUI applications)
 cask "visual-studio-code"
@@ -24,6 +25,7 @@ cask "yubico-authenticator"
 # Fonts
 cask "font-fira-code"
 cask "font-jetbrains-mono"
+cask "font-meslo-lg-nerd-font"
 
 # Mac App Store applications (requires mas CLI)
 brew "mas"
