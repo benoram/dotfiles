@@ -31,7 +31,7 @@ brew "mas"
 mas "1Password for Safari", id: 1569813296
 mas "Drafts", id: 1435957248
 mas "Magnet", id: 441258766
-mas "Soulver 3", id: 1402746188
+mas "Soulver 3", id: 1508732804
 mas "Todoist", id: 585829637
 mas "Things", id: 904280696
 mas "Windows App", id: 1295203466
