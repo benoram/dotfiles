@@ -61,6 +61,8 @@ elif [[ "$OS_TYPE" == "linux" ]]; then
     else
         info "Running on Linux"
     fi
+else
+    warn "Unknown OS type '$OS_TYPE'. Skipping OS-specific version checks."
 fi
 
 # Install Homebrew on macOS if not already installed
