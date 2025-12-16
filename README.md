@@ -27,8 +27,9 @@ cd ~/.dotfiles
   - Applies macOS system preferences
   - Runs Touch ID setup for sudo
 - **On Linux:**
+  - Installs Starship prompt automatically
   - Skips macOS-specific installations
-  - Provides guidance for manual package installation
+  - Provides guidance for other manual package installations
 - **On both platforms:**
   - Symlinks dotfiles from `config/` to your home directory
   - Runs common setup scripts
@@ -146,9 +147,10 @@ To customize your Starship prompt:
 
 ### Recommended for Linux:
 Before running the bootstrap script, consider manually installing:
-- **Starship prompt**: `curl -sS https://starship.rs/install.sh | sh`
 - **Essential tools**: git, zsh, curl, wget, htop, tree, jq
 - **Development tools**: Node.js, Python, GitHub CLI (gh)
+
+Note: The bootstrap script automatically installs Starship prompt on Linux.
 
 ## Notes
 

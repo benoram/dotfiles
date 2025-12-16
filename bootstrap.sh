@@ -88,12 +88,19 @@ if [[ "$OS_TYPE" == "macos" ]]; then
 else
     info "Skipping Homebrew installation (not on macOS)"
     
-    # On Linux, suggest installing essential packages
+    # On Linux, install Starship and suggest other packages
     if [[ "$OS_TYPE" == "linux" ]]; then
-        info "On Linux, you may want to install packages manually:"
+        # Install Starship prompt automatically
+        if ! command -v starship &> /dev/null; then
+            info "Installing Starship prompt..."
+            curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+        else
+            info "Starship is already installed"
+        fi
+        
+        info "Other packages you may want to install manually:"
         info "  - git, zsh, curl, wget, htop, tree, jq"
         info "  - Node.js, Python, GitHub CLI (gh)"
-        info "  - Starship prompt: curl -sS https://starship.rs/install.sh | sh"
     fi
 fi
 
