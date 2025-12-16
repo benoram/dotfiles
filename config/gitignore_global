@@ -35,7 +35,6 @@ $RECYCLE.BIN/
 .idea/
 *.swp
 *.swo
-*~
 .project
 .classpath
 .settings/
