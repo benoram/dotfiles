@@ -112,6 +112,18 @@ brew bundle install
 2. Make it executable: `chmod +x scripts/your-script.sh`
 3. Run the bootstrap script again, or execute it manually
 
+### Customizing Starship Prompt
+Starship can be customized by creating a configuration file at `~/.config/starship.toml`. This allows you to modify the prompt appearance, modules, and behavior to suit your preferences.
+
+To customize your Starship prompt:
+1. Create the configuration directory and file:
+   ```bash
+   mkdir -p ~/.config
+   touch ~/.config/starship.toml
+   ```
+2. Add your customizations to `~/.config/starship.toml`
+3. Refer to the [Starship Configuration Documentation](https://starship.rs/config/) for available options and examples
+
 ## Requirements
 
 - macOS 26 (Sequoia) or compatible version
