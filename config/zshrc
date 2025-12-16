@@ -10,8 +10,8 @@ if [[ $(uname -m) == "arm64" ]]; then
 fi
 
 # Environment variables
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nano'
+export VISUAL='nano'
 
 # Aliases
 alias ..='cd ..'
