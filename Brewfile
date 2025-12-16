@@ -1,10 +1,6 @@
 # Brewfile - Homebrew Bundle file for macOS package management
 # Install with: brew bundle install
 
-# Taps
-tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-
 # Formulae (CLI tools)
 brew "git"
 brew "zsh"
