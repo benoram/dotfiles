@@ -51,8 +51,8 @@ Main setup script that orchestrates the entire installation process.
 ### Brewfile
 Defines packages and applications to install via Homebrew including:
 - **Command-line tools** - git, zsh, node, python, gh (GitHub CLI), and more
-- **GUI applications** - VS Code, OrbStack, GitHub Desktop, Tailscale
-- **Mac App Store apps** - 1Password for Safari, Drafts, Magnet, Soulver 3, Todoist, Things, Windows App
+- **GUI applications** - VS Code, OrbStack, GitHub Desktop, Tailscale, BusyCal, Yubico Authenticator
+- **Mac App Store apps** - 1Password for Safari, Drafts, Magnet, Soulver 3, Todoist, Things, Windows App, Pages, Xcode
 - **Fonts** - Fira Code, JetBrains Mono
 
 ### Configuration Files (`config/`)

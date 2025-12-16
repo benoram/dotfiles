@@ -18,6 +18,8 @@ cask "visual-studio-code"
 cask "orbstack"
 cask "github-desktop"
 cask "tailscale"
+cask "busycal"
+cask "yubico-authenticator"
 
 # Fonts
 cask "font-fira-code"
@@ -32,3 +34,5 @@ mas "Soulver 3", id: 1402746188
 mas "Todoist", id: 944424958
 mas "Things", id: 904280696
 mas "Windows App", id: 1295203466
+mas "Pages", id: 409201541
+mas "Xcode", id: 497799835
