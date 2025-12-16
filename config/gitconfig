@@ -2,8 +2,8 @@
 # Global Git configuration
 
 [user]
-	name = Your Name
-	email = your.email@example.com
+	name = Ben Oram
+	email = b@oram.co
 
 [core]
 	editor = nano
