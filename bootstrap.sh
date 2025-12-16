@@ -46,6 +46,10 @@ info "Dotfiles directory: $DOTFILES_DIR"
 OS_TYPE=$(detect_os)
 info "Detected OS: $OS_TYPE"
 
+# Warn if OS is not explicitly supported
+if [[ "$OS_TYPE" == "unknown" ]]; then
+    warn "Unknown operating system detected. Some setup steps may be skipped or unsupported."
+fi
 # Check macOS version if on macOS
 if [[ "$OS_TYPE" == "macos" ]]; then
     MACOS_VERSION=$(sw_vers -productVersion)
