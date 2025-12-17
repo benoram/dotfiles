@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# scripts/setup-touchid-sudo.sh
-# Enable Touch ID for sudo authentication in Terminal
+# scripts/macos-setup-touchid-sudo.sh
+# Enable Touch ID for sudo authentication in Terminal (macOS only)
 
 echo "Setting up Touch ID for sudo..."
 
