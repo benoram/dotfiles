@@ -17,6 +17,12 @@
     },
     "ghcr.io/devcontainers/features/github-cli:1": {
       "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "latest"
     }
   },
 
@@ -34,5 +40,5 @@
 
   "remoteUser": "vscode",
   
-  "postCreateCommand": "echo 'Welcome to your Ubuntu development environment!'"
+  "postCreateCommand": "cd ${containerWorkspaceFolder} && bash bootstrap.sh"
 }
