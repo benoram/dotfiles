@@ -36,4 +36,3 @@ mas "Todoist", id: 585829637
 mas "Things", id: 904280696
 mas "Windows App", id: 1295203466
 mas "Pages", id: 409201541
-mas "Xcode", id: 497799835
