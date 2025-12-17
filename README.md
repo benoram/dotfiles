@@ -60,7 +60,7 @@ Main setup script that orchestrates the entire installation process. Automatical
 Defines packages and applications to install via Homebrew on macOS including:
 - **Command-line tools** - git, zsh, node, python, gh (GitHub CLI), starship (cross-shell prompt), and more
 - **GUI applications** - VS Code, OrbStack, GitHub Desktop, Tailscale, Yubico Authenticator
-- **Mac App Store apps** - 1Password for Safari, Drafts, Magnet, Soulver 3, Todoist, Things, Windows App, Pages, Xcode
+- **Mac App Store apps** - 1Password for Safari, Drafts, Magnet, Soulver 3, Todoist, Things, Windows App, Pages
 - **Fonts** - Fira Code, JetBrains Mono, Meslo LG Nerd Font
 
 ### Configuration Files (`config/`)
