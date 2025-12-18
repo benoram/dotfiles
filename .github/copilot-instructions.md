@@ -1,74 +1,80 @@
-# GitHub Copilot Instructions for dotfiles
+# GitHub Copilot Instructions
 
-## Project Overview
-This is a dotfiles repository for managing personal configuration files and development environment setup.
+This file provides guidance to GitHub Copilot for working with this repository.
 
-## Code Changes and Pull Request Process
+## Tech Stack
 
-### **CRITICAL: All changes MUST follow a pull request workflow**
-- Never commit directly to the `main` branch
-- Always create a new branch for any changes
-- All pull requests require a GitHub issue - create an issue first if one doesn't exist
-- Open a pull request for review before merging
-- Ensure all changes are reviewed and approved
+### Development Platform
+- **Primary Development**: GitHub Copilot (via GitHub Issues assignment or GitHub Codespaces)
+- **Operating Systems**: Mac (Apple Silicon) and Ubuntu-based Codespaces
+- **Version Control**: Git with GitHub
 
-### Branch Naming Convention
-Use descriptive branch names following this pattern:
-- `feature/` - for new configurations or scripts
-- `fix/` - for bug fixes or corrections
-- `docs/` - for documentation updates
-- `refactor/` - for restructuring existing configurations
+### Deployment Platforms
+- Mac (Apple Silicon)
+- Ubuntu
+- Docker
+- Kubernetes
+- **Supported Architectures**: x64 and ARM64
 
-## Documentation Requirements
+## Development Workflow
 
-### **Keep Documentation Up to Date**
-- Update the README.md whenever:
-  - Adding new configuration files
-  - Introducing new installation scripts
-  - Changing setup procedures
-  - Adding dependencies or prerequisites
-  - Modifying directory structure
-- Document all configuration file purposes and usage
-- Include clear installation and setup instructions
-- Maintain a changelog for significant updates
-- Document any platform-specific configurations (Linux, macOS, Windows)
+Follow this workflow for all development tasks:
 
-### Documentation Standards
-- Use clear, concise language
-- Include code examples where applicable
-- Document any environment variables or prerequisites
-- Explain the purpose and impact of configuration changes
-- Keep table of contents updated if present
+1. Create a GitHub issue
+2. Create a branch using the branch naming conventions (see below)
+3. Write code
+4. Test locally
+5. Commit tested code
+6. Create a pull request (update the GitHub issue appropriately)
+7. Review code
+8. Merge to default branch
 
-## Best Practices for Dotfiles
+## Secrets Management
 
-### File Organization
-- Group related configurations together
-- Use consistent naming conventions
-- Maintain clear directory structure
-- Include comments in configuration files explaining non-obvious settings
+**Critical**: Secrets are never allowed in the repository.
 
-### Compatibility
-- Note OS-specific configurations clearly
-- Test changes across supported platforms when possible
-- Document any platform-specific dependencies
+Secrets must be stored in one of the following locations:
+- GitHub Secrets (for GitHub Actions)
+- GitHub Codespaces Secrets
+- 1Password
 
-### Security
-- Never commit sensitive information (API keys, passwords, tokens)
-- Use environment variables or separate untracked files for secrets
-- Add sensitive file patterns to .gitignore
+## Branch Naming Conventions
 
-## Commit Message Guidelines
-- Use clear, descriptive commit messages
-- Start with a verb (Add, Update, Fix, Remove, Refactor)
-- Reference related issues or PRs when applicable
-- Keep commits atomic and focused on single changes
+Follow these conventions when creating branches:
 
-## Review Checklist
-Before submitting a pull request, ensure:
-- [ ] Documentation is updated to reflect changes
-- [ ] Configuration files include explanatory comments
-- [ ] No sensitive information is committed
-- [ ] Changes are tested in relevant environment(s)
-- [ ] Commit messages are clear and descriptive
-- [ ] Branch follows naming conventions
+1. **Lowercase and Hyphen-separated**: Use lowercase for branch names and hyphens to separate words
+   - Example: `feature/new-login` or `bugfix/header-styling`
+
+2. **Alphanumeric Characters**: Use only lowercase alphanumeric characters (a-z, 0-9) and hyphens
+   - Avoid punctuation, spaces, underscores, or any non-alphanumeric character
+
+3. **Descriptive**: The name should be descriptive and concise, ideally reflecting the work done on the branch
+
+4. **Branch Prefixes**:
+   - **Feature Branches**: `feature/` - For developing new features
+     - Example: `feature/login-system`
+   - **Bugfix Branches**: `bugfix/` - For fixing bugs in the code
+     - Example: `bugfix/header-styling`
+   - **Documentation Branches**: `docs/` - For writing, updating, or fixing documentation (e.g., README.md)
+     - Example: `docs/api-endpoints`
+
+## Project and Code Guidelines
+
+- Always follow good security practices
+- Use scripts to perform actions when available
+- Always keep documentation up-to-date with the code
+
+## Project Structure
+
+The repository follows this structure:
+
+- `scripts/` - Development, deployment and testing scripts
+- `docs/` - Project documentation to be kept in sync at all times
+- `infra/` - Source code for Terraform and other infrastructure-as-code tools
+- `src/` - Source code for projects/apps
+
+## Documentation Guidelines
+
+- The project `README.md` should be clean and concise and act as a table of contents for documentation stored in the `docs/` directory
+- Keep all documentation synchronized with code changes
+- Update relevant documentation when making code changes
